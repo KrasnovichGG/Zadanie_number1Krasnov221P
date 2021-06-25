@@ -38,11 +38,18 @@
             this.boxdays = new System.Windows.Forms.TextBox();
             this.boxfullsum = new System.Windows.Forms.TextBox();
             this.cmbboxprocent = new System.Windows.Forms.ComboBox();
+            this.Raschetnayatable = new System.Windows.Forms.DataGridView();
+            this.Колонна1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Колонна2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Колонна3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Колонна4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Raschetnayatable)).BeginInit();
             this.SuspendLayout();
             // 
             // btnschet
             // 
-            this.btnschet.Location = new System.Drawing.Point(583, 197);
+            this.btnschet.Location = new System.Drawing.Point(245, 222);
             this.btnschet.Name = "btnschet";
             this.btnschet.Size = new System.Drawing.Size(85, 85);
             this.btnschet.TabIndex = 0;
@@ -52,7 +59,7 @@
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(583, 307);
+            this.btnclear.Location = new System.Drawing.Point(245, 340);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(85, 85);
             this.btnclear.TabIndex = 1;
@@ -102,6 +109,7 @@
             this.boxsum.Name = "boxsum";
             this.boxsum.Size = new System.Drawing.Size(119, 20);
             this.boxsum.TabIndex = 6;
+            this.boxsum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxsum_KeyPress);
             // 
             // boxdays
             // 
@@ -109,11 +117,14 @@
             this.boxdays.Name = "boxdays";
             this.boxdays.Size = new System.Drawing.Size(100, 20);
             this.boxdays.TabIndex = 8;
+            this.boxdays.TextChanged += new System.EventHandler(this.boxdays_TextChanged);
+            this.boxdays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxsum_KeyPress);
             // 
             // boxfullsum
             // 
             this.boxfullsum.Location = new System.Drawing.Point(379, 72);
             this.boxfullsum.Name = "boxfullsum";
+            this.boxfullsum.ReadOnly = true;
             this.boxfullsum.Size = new System.Drawing.Size(289, 20);
             this.boxfullsum.TabIndex = 9;
             // 
@@ -129,11 +140,57 @@
             this.cmbboxprocent.Size = new System.Drawing.Size(158, 21);
             this.cmbboxprocent.TabIndex = 10;
             // 
+            // Raschetnayatable
+            // 
+            this.Raschetnayatable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Raschetnayatable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Колонна1,
+            this.Колонна2,
+            this.Колонна3,
+            this.Колонна4});
+            this.Raschetnayatable.Location = new System.Drawing.Point(379, 119);
+            this.Raschetnayatable.Name = "Raschetnayatable";
+            this.Raschetnayatable.Size = new System.Drawing.Size(444, 504);
+            this.Raschetnayatable.TabIndex = 11;
+            this.Raschetnayatable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Raschetnayatable_CellContentClick);
+            // 
+            // Колонна1
+            // 
+            this.Колонна1.HeaderText = "День";
+            this.Колонна1.Name = "Колонна1";
+            this.Колонна1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Колонна1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Колонна2
+            // 
+            this.Колонна2.HeaderText = "Ставка";
+            this.Колонна2.Name = "Колонна2";
+            // 
+            // Колонна3
+            // 
+            this.Колонна3.HeaderText = "%Накопительный";
+            this.Колонна3.Name = "Колонна3";
+            // 
+            // Колонна4
+            // 
+            this.Колонна4.HeaderText = "Сумма выплаты";
+            this.Колонна4.Name = "Колонна4";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(51, 510);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(936, 670);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Raschetnayatable);
             this.Controls.Add(this.cmbboxprocent);
             this.Controls.Add(this.boxfullsum);
             this.Controls.Add(this.boxdays);
@@ -146,6 +203,8 @@
             this.Controls.Add(this.btnschet);
             this.Name = "Form1";
             this.Text = "Калькулятор микрокредита";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Raschetnayatable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +222,12 @@
         private System.Windows.Forms.TextBox boxdays;
         private System.Windows.Forms.TextBox boxfullsum;
         private System.Windows.Forms.ComboBox cmbboxprocent;
+        private System.Windows.Forms.DataGridView Raschetnayatable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Колонна1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Колонна2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Колонна3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Колонна4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -88,7 +88,7 @@ namespace Zadanie_number1Krasnov221P
                     Application.Restart();
                     break;
             }
-
+            //Raschetnayatable.Rows.Add(row);
         }
 
         private void btnclear_Click(object sender, EventArgs e)
@@ -97,6 +97,40 @@ namespace Zadanie_number1Krasnov221P
             boxfullsum.Text = "";
             boxsum.Text = "";
             cmbboxprocent.Text = "";
+        }
+
+        private void Raschetnayatable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void boxsum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void boxdays_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(boxsum, "Введите сумму вашего займа");
+            t.SetToolTip(boxdays, "На сколько дней хотите займ");
+            t.SetToolTip(boxfullsum, "Сумма вашей выплаты");
+            t.SetToolTip(cmbboxprocent, "Проценты по вашим дням");
+
         }
     }
 }
