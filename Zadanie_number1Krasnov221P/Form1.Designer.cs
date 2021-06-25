@@ -122,7 +122,7 @@
             this.cmbboxprocent.Items.AddRange(new object[] {
             "c 0 по 5 день-0.9%",
             "с 6 по 10 день-0.7%",
-            "с 11 дня включительно-0.6 %"});
+            "с 11 дня включительно-0.6%"});
             this.cmbboxprocent.Location = new System.Drawing.Point(51, 197);
             this.cmbboxprocent.Name = "cmbboxprocent";
             this.cmbboxprocent.Size = new System.Drawing.Size(121, 21);

@@ -28,13 +28,13 @@ namespace Zadanie_number1Krasnov221P
                 case "c 0 по 5 день-0.9%":
                     if (days > 0 && days < 6)
                     {
-                        boxfullsum.Text = Convert.ToString((a / 100)* 0.9 * days + a);
+                        boxfullsum.Text = Convert.ToString((a / 100) * 0.9 * days + a);
                         break;
                     }
                     MessageBox.Show("Принимает дни от 0 до 5!");
                     Application.Restart();
                     break;
-                case "С 6 по 10 день 0.7%":
+                case "с 6 по 10 день-0.7%":
                     if (days > 5 && days < 11)
                     {
                         boxfullsum.Text = Convert.ToString(((a / 100) * 0.9 * 5) + ((a / 100) * 0.7 * (days - 5) + a));
@@ -43,16 +43,22 @@ namespace Zadanie_number1Krasnov221P
                     MessageBox.Show("Принимает дни от 6 до 10!");
                     Application.Restart();
                     break;
-                case "с 6 по 10 день - 0.7 %":
-                    boxfullsum.Text = Convert.ToString((a / 100) * 0.7 * days + a);
+                case "с 11 дня включительно-0.6%":
+                    if (days > 10 && days < 366)
+                    {
+                        double d = ((a / 100) * 0.9 * 5) + ((a / 100) * 0.7 * 5) + ((a / 100) * 0.6 * (days - 10) + a);
+                        if ((a * 2.5) < d)
+                        {
+                            d = a * 2.5;
+                        }
+                        boxfullsum.Text = Convert.ToString(d);
+                        break;
+                    }
+                    MessageBox.Show("Принимает дни от 11 до 365!");
+                    Application.Restart();
                     break;
-                    case "с 11 дня включительно -0.6 %":
-                    boxfullsum.Text = Convert.ToString((a / 100) * 0.6 * days + a);
-                    break;
-        
-
-
             }
+
         }
     }
 }
