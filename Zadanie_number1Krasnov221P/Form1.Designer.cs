@@ -58,6 +58,7 @@
             this.btnclear.TabIndex = 1;
             this.btnclear.Text = "Очистить";
             this.btnclear.UseVisualStyleBackColor = true;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // labelsum
             // 
@@ -71,7 +72,7 @@
             // labelzaim
             // 
             this.labelzaim.AutoSize = true;
-            this.labelzaim.Location = new System.Drawing.Point(48, 282);
+            this.labelzaim.Location = new System.Drawing.Point(50, 284);
             this.labelzaim.Name = "labelzaim";
             this.labelzaim.Size = new System.Drawing.Size(102, 13);
             this.labelzaim.TabIndex = 3;
@@ -80,7 +81,7 @@
             // labelprocent
             // 
             this.labelprocent.AutoSize = true;
-            this.labelprocent.Location = new System.Drawing.Point(48, 165);
+            this.labelprocent.Location = new System.Drawing.Point(49, 170);
             this.labelprocent.Name = "labelprocent";
             this.labelprocent.Size = new System.Drawing.Size(102, 13);
             this.labelprocent.TabIndex = 4;
@@ -97,14 +98,14 @@
             // 
             // boxsum
             // 
-            this.boxsum.Location = new System.Drawing.Point(51, 72);
+            this.boxsum.Location = new System.Drawing.Point(52, 72);
             this.boxsum.Name = "boxsum";
             this.boxsum.Size = new System.Drawing.Size(119, 20);
             this.boxsum.TabIndex = 6;
             // 
             // boxdays
             // 
-            this.boxdays.Location = new System.Drawing.Point(51, 340);
+            this.boxdays.Location = new System.Drawing.Point(52, 340);
             this.boxdays.Name = "boxdays";
             this.boxdays.Size = new System.Drawing.Size(100, 20);
             this.boxdays.TabIndex = 8;
@@ -125,7 +126,7 @@
             "с 11 дня включительно-0.6%"});
             this.cmbboxprocent.Location = new System.Drawing.Point(51, 197);
             this.cmbboxprocent.Name = "cmbboxprocent";
-            this.cmbboxprocent.Size = new System.Drawing.Size(121, 21);
+            this.cmbboxprocent.Size = new System.Drawing.Size(158, 21);
             this.cmbboxprocent.TabIndex = 10;
             // 
             // Form1

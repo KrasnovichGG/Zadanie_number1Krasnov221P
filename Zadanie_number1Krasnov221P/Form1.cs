@@ -23,12 +23,35 @@ namespace Zadanie_number1Krasnov221P
             double a;
             a = Convert.ToDouble(boxsum.Text);
             days = Convert.ToInt32(boxdays.Text);
+            if (a >= 500001)
+            {
+                MessageBox.Show("Более 500 тысяч не даём!");
+                Application.Restart();
+            }
+            if (days > 0 && days < 6)
+            {
+                cmbboxprocent.Text = "c 0 по 5 день-0.9%";
+            }
+            if(days > 5 && days < 11)
+            {
+                cmbboxprocent.Text = "с 6 по 10 день-0.7%";
+            }
+            if(days > 10 && days < 366)
+            {
+                cmbboxprocent.Text = "с 11 дня включительно-0.6%";
+            }
             switch (cmbboxprocent.Text)
             {
                 case "c 0 по 5 день-0.9%":
                     if (days > 0 && days < 6)
                     {
-                        boxfullsum.Text = Convert.ToString((a / 100) * 0.9 * days + a);
+                        double h = (a / 100) * 0.9 * days + a;
+                        if((a * 2.5) < h)
+                        {
+                            h = a * 2.5;
+                            MessageBox.Show("Размер выплаты по микрозайму не может превышать 2,5-кратного размера суммы займа");
+                        }
+                        boxfullsum.Text = Convert.ToString(h);
                         break;
                     }
                     MessageBox.Show("Принимает дни от 0 до 5!");
@@ -37,7 +60,13 @@ namespace Zadanie_number1Krasnov221P
                 case "с 6 по 10 день-0.7%":
                     if (days > 5 && days < 11)
                     {
-                        boxfullsum.Text = Convert.ToString(((a / 100) * 0.9 * 5) + ((a / 100) * 0.7 * (days - 5) + a));
+                        double v = ((a / 100) * 0.9 * 5) + ((a / 100) * 0.7 * (days - 5) + a);
+                        if ((a * 2.5) < v)
+                        {
+                            v = a * 2.5;
+                            MessageBox.Show("Размер выплаты по микрозайму не может превышать 2,5-кратного размера суммы займа");
+                        }
+                        boxfullsum.Text = Convert.ToString(v);
                         break;
                     }
                     MessageBox.Show("Принимает дни от 6 до 10!");
@@ -50,6 +79,7 @@ namespace Zadanie_number1Krasnov221P
                         if ((a * 2.5) < d)
                         {
                             d = a * 2.5;
+                            MessageBox.Show("Размер выплаты по микрозайму не может превышать 2,5-кратного размера суммы займа");
                         }
                         boxfullsum.Text = Convert.ToString(d);
                         break;
@@ -59,6 +89,14 @@ namespace Zadanie_number1Krasnov221P
                     break;
             }
 
+        }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            boxdays.Text = "";
+            boxfullsum.Text = "";
+            boxsum.Text = "";
+            cmbboxprocent.Text = "";
         }
     }
 }
