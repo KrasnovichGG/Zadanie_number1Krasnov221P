@@ -43,63 +43,68 @@
             this.Колонна2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Колонна3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Колонна4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Raschetnayatable)).BeginInit();
             this.SuspendLayout();
             // 
             // btnschet
             // 
-            this.btnschet.Location = new System.Drawing.Point(245, 222);
+            this.btnschet.BackColor = System.Drawing.Color.Gold;
+            this.btnschet.Location = new System.Drawing.Point(201, 446);
             this.btnschet.Name = "btnschet";
-            this.btnschet.Size = new System.Drawing.Size(85, 85);
+            this.btnschet.Size = new System.Drawing.Size(157, 137);
             this.btnschet.TabIndex = 0;
             this.btnschet.Text = "Сalculate";
-            this.btnschet.UseVisualStyleBackColor = true;
+            this.btnschet.UseVisualStyleBackColor = false;
             this.btnschet.Click += new System.EventHandler(this.btnschet_Click);
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(245, 340);
+            this.btnclear.BackColor = System.Drawing.Color.Gold;
+            this.btnclear.Location = new System.Drawing.Point(12, 446);
             this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(85, 85);
+            this.btnclear.Size = new System.Drawing.Size(157, 137);
             this.btnclear.TabIndex = 1;
             this.btnclear.Text = "Очистить";
-            this.btnclear.UseVisualStyleBackColor = true;
+            this.btnclear.UseVisualStyleBackColor = false;
             this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // labelsum
             // 
             this.labelsum.AutoSize = true;
+            this.labelsum.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelsum.Location = new System.Drawing.Point(48, 43);
             this.labelsum.Name = "labelsum";
-            this.labelsum.Size = new System.Drawing.Size(122, 13);
+            this.labelsum.Size = new System.Drawing.Size(199, 22);
             this.labelsum.TabIndex = 2;
             this.labelsum.Text = "Сумма займа в рублях";
             // 
             // labelzaim
             // 
             this.labelzaim.AutoSize = true;
+            this.labelzaim.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelzaim.Location = new System.Drawing.Point(50, 284);
             this.labelzaim.Name = "labelzaim";
-            this.labelzaim.Size = new System.Drawing.Size(102, 13);
+            this.labelzaim.Size = new System.Drawing.Size(155, 19);
             this.labelzaim.TabIndex = 3;
             this.labelzaim.Text = "Срок займа в днях";
             // 
             // labelprocent
             // 
             this.labelprocent.AutoSize = true;
+            this.labelprocent.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelprocent.Location = new System.Drawing.Point(49, 170);
             this.labelprocent.Name = "labelprocent";
-            this.labelprocent.Size = new System.Drawing.Size(102, 13);
+            this.labelprocent.Size = new System.Drawing.Size(175, 22);
             this.labelprocent.TabIndex = 4;
             this.labelprocent.Text = "Проценты по дням";
             // 
             // labelpolnsum
             // 
             this.labelpolnsum.AutoSize = true;
+            this.labelpolnsum.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelpolnsum.Location = new System.Drawing.Point(376, 43);
             this.labelpolnsum.Name = "labelpolnsum";
-            this.labelpolnsum.Size = new System.Drawing.Size(165, 13);
+            this.labelpolnsum.Size = new System.Drawing.Size(271, 22);
             this.labelpolnsum.TabIndex = 5;
             this.labelpolnsum.Text = "Полная выплачиваемая сумма";
             // 
@@ -107,15 +112,15 @@
             // 
             this.boxsum.Location = new System.Drawing.Point(52, 72);
             this.boxsum.Name = "boxsum";
-            this.boxsum.Size = new System.Drawing.Size(119, 20);
+            this.boxsum.Size = new System.Drawing.Size(195, 20);
             this.boxsum.TabIndex = 6;
             this.boxsum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxsum_KeyPress);
             // 
             // boxdays
             // 
-            this.boxdays.Location = new System.Drawing.Point(52, 340);
+            this.boxdays.Location = new System.Drawing.Point(54, 339);
             this.boxdays.Name = "boxdays";
-            this.boxdays.Size = new System.Drawing.Size(100, 20);
+            this.boxdays.Size = new System.Drawing.Size(155, 20);
             this.boxdays.TabIndex = 8;
             this.boxdays.TextChanged += new System.EventHandler(this.boxdays_TextChanged);
             this.boxdays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxsum_KeyPress);
@@ -125,7 +130,7 @@
             this.boxfullsum.Location = new System.Drawing.Point(379, 72);
             this.boxfullsum.Name = "boxfullsum";
             this.boxfullsum.ReadOnly = true;
-            this.boxfullsum.Size = new System.Drawing.Size(289, 20);
+            this.boxfullsum.Size = new System.Drawing.Size(300, 20);
             this.boxfullsum.TabIndex = 9;
             // 
             // cmbboxprocent
@@ -176,20 +181,12 @@
             this.Колонна4.HeaderText = "Сумма выплаты";
             this.Колонна4.Name = "Колонна4";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(51, 510);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SandyBrown;
             this.ClientSize = new System.Drawing.Size(936, 670);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Raschetnayatable);
             this.Controls.Add(this.cmbboxprocent);
             this.Controls.Add(this.boxfullsum);
@@ -227,7 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Колонна2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Колонна3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Колонна4;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
